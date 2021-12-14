@@ -1,15 +1,22 @@
 export const countWords = (phrase) => {
-  const regex = /\S([a-zA-Z']|[0-9])+/g;
-  let wordList = phrase.match(regex);
+  const regex = /([\w]+['][\w]+)|[\w]+/g;
+  let wordList = phrase.toLowerCase().match(regex)
   let resultList = [];
   let resultCount = {};
+
   wordList.forEach(e => {
-    if(resultList.includes(e)){
+  if(resultList.includes(e)){
       resultCount[e]++;
     } else {
       resultList.push(e);
-      resultCount[String(e)] = 1;
+      resultCount[e] = 1;
     }
   })
   return resultCount;
+
+
 };
+
+const input = "First: don't laugh. Then: don't cry.";
+
+console.log(countWords(input))
