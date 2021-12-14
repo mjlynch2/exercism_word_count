@@ -1,4 +1,5 @@
 export const countWords = (phrase) => {
+  // match any of word plus apostrophe plus word OR word
   const regex = /([\w]+['][\w]+)|[\w]+/g;
   let wordList = phrase.toLowerCase().match(regex)
   let resultList = [];
@@ -13,6 +14,4 @@ export const countWords = (phrase) => {
     }
   })
   return resultCount;
-
-
 };
