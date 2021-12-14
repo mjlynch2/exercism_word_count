@@ -16,7 +16,3 @@ export const countWords = (phrase) => {
 
 
 };
-
-const input = "First: don't laugh. Then: don't cry.";
-
-console.log(countWords(input))
